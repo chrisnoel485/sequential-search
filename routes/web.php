@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::resource('/merek', 'MerekController');
+    Route::resource('/tim', 'TimController');
+});

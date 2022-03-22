@@ -302,6 +302,27 @@ return [
                 ],
             ],
         ],
+        ['header' => 'Management Data'],
+        [
+            'text' => 'Aset',
+            'url'  => 'aset',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Lokasi',
+            'url'  => 'lokasi',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Merek',
+            'url'  => 'merek',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Tim',
+            'url'  => 'tim',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
         ['header' => 'labels'],
         [
             'text'       => 'important',
