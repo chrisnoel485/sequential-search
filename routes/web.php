@@ -25,8 +25,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/merek', [App\Http\Controllers\MerekController::class, 'all'])->name('merek');
-
     Route::resource('/merek', 'MerekController');
     Route::resource('/tim', 'TimController');
 });
