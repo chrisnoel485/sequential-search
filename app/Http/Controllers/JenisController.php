@@ -49,7 +49,7 @@ class JenisController extends Controller
     		'deskripsi' => 'required'
     	]);
  
-        DB::table('jeniss')->insert([
+        DB::table('jenis')->insert([
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi,
         ]);
