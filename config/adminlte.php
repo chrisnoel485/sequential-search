@@ -319,6 +319,21 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'text' => 'Kategori',
+            'url'  => 'kategori',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Jenis',
+            'url'  => 'jenis',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Posisi',
+            'url'  => 'posisi',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
             'text' => 'Tim',
             'url'  => 'tim',
             'icon' => 'fas fa-fw fa-lock',

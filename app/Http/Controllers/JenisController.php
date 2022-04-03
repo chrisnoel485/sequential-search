@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Jenis;
 use Illuminate\Http\Request;
+use Redirect;
+use Session;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 
 class JenisController extends Controller
 {
@@ -15,6 +20,8 @@ class JenisController extends Controller
     public function index()
     {
         //
+        $jenis = Jenis::orderBy('created_at', 'DESC')->paginate(10);
+        return view('jenis.index', compact('jenis'));
     }
 
     /**
@@ -25,6 +32,7 @@ class JenisController extends Controller
     public function create()
     {
         //
+        return view('jenis/create');
     }
 
     /**
@@ -36,6 +44,18 @@ class JenisController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+    		'nama' => 'required',
+    		'deskripsi' => 'required'
+    	]);
+ 
+        DB::table('jeniss')->insert([
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
+        ]);
+ 
+    	return redirect('/jenis')
+            ->with('success_message', 'Berhasil menambah jenis baru');
     }
 
     /**
@@ -44,9 +64,11 @@ class JenisController extends Controller
      * @param  \App\Models\Jenis  $jenis
      * @return \Illuminate\Http\Response
      */
-    public function show(Jenis $jenis)
+    public function show($id)
     {
         //
+        $jenis = Jenis::findOrFail($id);
+        return view('jenis.show', compact('jenis'));
     }
 
     /**
@@ -55,9 +77,11 @@ class JenisController extends Controller
      * @param  \App\Models\Jenis  $jenis
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jenis $jenis)
+    public function edit($id)
     {
         //
+        $jenis = Jenis::findOrFail($id);
+        return view('jenis.edit', compact('jenis'));
     }
 
     /**
@@ -67,9 +91,22 @@ class JenisController extends Controller
      * @param  \App\Models\Jenis  $jenis
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Jenis $jenis)
+    public function update(Request $request,$id)
     {
         //
+        $this->validate($request,[
+    		'nama' => 'required',
+    		'deskripsi' => 'required'
+    	]);
+ 
+        $jenis = Jenis::findOrFail($id);
+        $jenis->update([
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi
+        ]);
+ 
+    	return redirect('/jenis')
+            ->with('success_message', 'Berhasil mengganti jenis ');
     }
 
     /**
@@ -78,8 +115,12 @@ class JenisController extends Controller
      * @param  \App\Models\Jenis  $jenis
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jenis $jenis)
+    public function destroy($id)
     {
         //
+        $jenis = Jenis::findOrFail($id);
+        $jenis->delete();
+
+	    return redirect('/jenis');
     }
 }

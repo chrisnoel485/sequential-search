@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Redirect;
+use Session;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 
 class KategoriController extends Controller
 {
@@ -15,6 +20,8 @@ class KategoriController extends Controller
     public function index()
     {
         //
+        $kategori = Kategori::orderBy('created_at', 'DESC')->paginate(10);
+        return view('kategori.index', compact('kategori'));
     }
 
     /**
@@ -25,6 +32,7 @@ class KategoriController extends Controller
     public function create()
     {
         //
+        return view('kategori/create');
     }
 
     /**
@@ -36,6 +44,18 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+    		'nama' => 'required',
+    		'deskripsi' => 'required'
+    	]);
+ 
+        DB::table('kategoris')->insert([
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
+        ]);
+ 
+    	return redirect('/kategori')
+            ->with('success_message', 'Berhasil menambah kategori baru');
     }
 
     /**
@@ -44,9 +64,11 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function show(Kategori $kategori)
+    public function show($id)
     {
         //
+        $kategori = Kategori::findOrFail($id);
+        return view('kategori.show', compact('kategori'));
     }
 
     /**
@@ -55,9 +77,11 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategori $kategori)
+    public function edit($id)
     {
         //
+        $kategori = Kategori::findOrFail($id);
+        return view('kategori.edit', compact('kategori'));
     }
 
     /**
@@ -67,9 +91,22 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategori $kategori)
+    public function update(Request $request,$id)
     {
         //
+        $this->validate($request,[
+    		'nama' => 'required',
+    		'deskripsi' => 'required'
+    	]);
+ 
+        $kategori = Kategori::findOrFail($id);
+        $kategori->update([
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi
+        ]);
+ 
+    	return redirect('/kategori')
+            ->with('success_message', 'Berhasil mengganti kategori ');
     }
 
     /**
@@ -78,8 +115,12 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $kategori)
+    public function destroy($id)
     {
         //
+        $kategori = Kategori::findOrFail($id);
+        $kategori->delete();
+
+	    return redirect('/kategori');
     }
 }

@@ -26,5 +26,7 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() {
     Route::resource('/merek', 'MerekController');
+    Route::resource('/jenis', 'JenisController');
+    Route::resource('/kategori', 'KategoriController');
     Route::resource('/tim', 'TimController');
 });
