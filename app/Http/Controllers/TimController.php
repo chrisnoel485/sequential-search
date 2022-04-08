@@ -108,6 +108,11 @@ class TimController extends Controller
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi
         ]);
+        //DB::table('tims')->insert([
+        //    'kode_tim' => $request->kode_tim,
+        //    'nama' => $request->nama,
+        //    'deskripsi' => $request->deskripsi,
+        //]);
  
     	return redirect('/tim')
             ->with('success_message', 'Berhasil mengganti Tim ');
