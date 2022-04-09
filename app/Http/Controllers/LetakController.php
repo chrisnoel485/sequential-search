@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Letak;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Redirect;
+use Session;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 
 class LetakController extends Controller
 {
@@ -15,6 +21,8 @@ class LetakController extends Controller
     public function index()
     {
         //
+        $letak = Letak::with('kategori')->orderBy('created_at', 'DESC')->paginate(10);
+        return view('letak.index', compact('letak'));
     }
 
     /**
@@ -25,6 +33,8 @@ class LetakController extends Controller
     public function create()
     {
         //
+        $kategori = Kategori::orderBy('nama', 'ASC')->get();
+        return view('letak/create', compact('kategori'));
     }
 
     /**
@@ -36,6 +46,20 @@ class LetakController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+            'kategori_id' => 'required',
+            'nama' => 'required',
+    		'deskripsi' => 'required'
+    	]);
+ 
+        DB::table('letaks')->insert([
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
+            'kategori_id' => $request->kategori_id,
+        ]);
+ 
+    	return redirect('/letak')
+            ->with('success_message', 'Berhasil menambah Letak');
     }
 
     /**
@@ -44,9 +68,12 @@ class LetakController extends Controller
      * @param  \App\Models\Letak  $letak
      * @return \Illuminate\Http\Response
      */
-    public function show(Letak $letak)
+    public function show($id)
     {
         //
+        $letak = Letak::findOrFail($id);
+        $kategori = Kategori::orderBy('nama', 'ASC')->get();
+        return view('letak.show', compact('letak','kategori'));
     }
 
     /**
@@ -55,9 +82,12 @@ class LetakController extends Controller
      * @param  \App\Models\Letak  $letak
      * @return \Illuminate\Http\Response
      */
-    public function edit(Letak $letak)
+    public function edit($id)
     {
         //
+        $letak = Letak::findOrFail($id);
+        $kategori = Kategori::orderBy('nama', 'ASC')->get();
+        return view('letak.edit', compact('letak','kategori'));
     }
 
     /**
@@ -67,9 +97,24 @@ class LetakController extends Controller
      * @param  \App\Models\Letak  $letak
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Letak $letak)
+    public function update(Request $request,$id)
     {
         //
+        $this->validate($request,[
+            'nama' => 'required',
+    		'deskripsi' => 'required',
+            'kategori_id' => 'required'
+    	]);
+ 
+        $letak = Letak::findOrFail($id);
+        $letak->update([
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
+            'kategori_id' => $request->kategori_id,
+        ]);
+ 
+    	return redirect('/letak')
+            ->with('success_message', 'Berhasil mengganti Letak');
     }
 
     /**
@@ -78,8 +123,12 @@ class LetakController extends Controller
      * @param  \App\Models\Letak  $letak
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Letak $letak)
+    public function destroy($id)
     {
         //
+        $letak = Letak::findOrFail($id);
+        $letak->delete();
+
+	    return redirect('/letak');
     }
 }

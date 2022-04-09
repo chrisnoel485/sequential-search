@@ -29,4 +29,5 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('/jenis', 'JenisController');
     Route::resource('/kategori', 'KategoriController');
     Route::resource('/tim', 'TimController');
+    Route::resource('/letak', 'LetakController');
 });
