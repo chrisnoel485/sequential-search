@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori;
+use App\Models\Merek;
 use Illuminate\Http\Request;
 use Redirect;
 use Session;
@@ -104,7 +105,7 @@ class KategoriController extends Controller
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi
         ]);
-        DB::table('kategoris')->insert([
+        DB::table('mereks')->insert([
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi,
         ]);
