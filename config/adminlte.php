@@ -329,6 +329,11 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'text' => 'Letak',
+            'url'  => 'letak',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
             'text' => 'Posisi',
             'url'  => 'posisi',
             'icon' => 'fas fa-fw fa-user',
