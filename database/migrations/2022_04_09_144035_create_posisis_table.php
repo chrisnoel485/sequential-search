@@ -13,7 +13,7 @@ class CreatePosisisTable extends Migration
      */
     public function up()
     {
-        Schema::create('posisis', function (Blueprint $table) {
+        Schema::create('aset_letak', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('aset_id')->unsigned();;
             $table->integer('letak_id')->unsigned();;
@@ -33,6 +33,6 @@ class CreatePosisisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posisis');
+        Schema::dropIfExists('aset_letak');
     }
 }
