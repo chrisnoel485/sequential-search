@@ -26,6 +26,7 @@
                     </div>
                     <div class="card-tools">
                         <a href="/aset/create" class="btn btn-primary">Input Aset Baru</a>
+                        <a href="/posisi/index" class="btn btn-primary">posisi</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -41,7 +42,6 @@
                                         <th class="text-center">Kategori</th>
                                         <th class="text-center">Jenis</th>
                                         <th class="text-center">Letak</th>
-                                        <th class="text-center">Test</th>
                                         <th class="text-center">Status</th>
                                         <th class="text-center">Tindakan</th>
                                     </tr>
@@ -57,13 +57,6 @@
                                         <td class="text-center">{{ $p->kategori->nama }}</td>
                                         <td class="text-center">{{ $p->jenis->nama }}</td>
                                         <td class="text-center">{{ $p->letak->nama }}</td>
-                                        <td>
-								            <ul>
-									            @foreach($p->letak as $h)
-									                <li> {{ $h->nama }} </li>
-									            @endforeach
-								            </ul>
-							            </td>
                                         <td class="text-center">{{ $p->status }}</td>
                                         <td class="text-center">
                                             <form action="{{ route('aset.destroy', $p->id) }}" method="POST">
