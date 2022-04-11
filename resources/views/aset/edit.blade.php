@@ -29,9 +29,13 @@
                             <form action="{{ route('aset.update', $aset->id) }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="_method" value="PUT">
-                                <div disabled class="form-group">
+                                <div class="form-group">
+                                    <label for="nama">ID Letak</label>
+                                    <input type="text" name="id" value="{{ $aset['id'] }}" class="form-control" disabled />
+                                </div>
+                                <div class="form-group">
                                     <label for="nama">ID Aset</label>
-                                    <input type="text" name="id" value="{{ $aset->id }}" class="form-control {{ $errors->has('id') ? 'is-invalid':'' }}" id="id" required>
+                                    <input type="text" name="id" value="{{ $aset->id }}" class="form-control {{ $errors->has('id') ? 'is-invalid':'' }}" id="id" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="nama">Nama Aset</label>
