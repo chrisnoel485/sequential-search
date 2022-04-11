@@ -37,7 +37,7 @@ class AsetController extends Controller
         //
         $merek = Merek::orderBy('nama', 'ASC')->get();
         $kategori = Kategori::orderBy('nama', 'ASC')->get();
-        $posisi = Posis::orderBy('nama', 'ASC')->get();
+        $posisi = Posisi::orderBy('nama', 'ASC')->get();
         return view('aset/create', compact('kategori','merek','posisi'));
     }
 
@@ -63,7 +63,7 @@ class AsetController extends Controller
         DB::table('asets')->insert([
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi,
-            'merek_id' => $request->kategori_id,
+            'merek_id' => $request->merek_id,
             'kategori_id' => $request->kategori_id,
             'posisi_id' => $request->posisi_id,
             'status' => $request->status,
