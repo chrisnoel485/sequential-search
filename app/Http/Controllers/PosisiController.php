@@ -19,7 +19,7 @@ class PosisiController extends Controller
     {
         //
         $aset = Aset::get();
-    	return view('aset', ['aset' => $aset]);
+    	return view('posisi', ['aset' => $aset]);
     }
 
     /**
