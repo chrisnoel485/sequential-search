@@ -51,6 +51,9 @@
                                     <tr>
                                         <td class="text-center">{{ $no++ }}</td>
                                         <td class="text-center">{{ $p->nama }}</td>
+                                        <td>
+                                            <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" class="form-control {{ $errors->has('deskripsi') ? 'is-invalid':'' }}">{{ $aset->deskripsi }}</textarea>
+                                        </td>
                                         <td class="text-center">{{ $p->deskripsi }}</td>
                                         <td class="text-center">{{ $p->merek->nama }}</td>
                                         <td class="text-center">{{ $p->kategori->nama }}</td>

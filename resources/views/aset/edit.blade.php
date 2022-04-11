@@ -30,10 +30,6 @@
                                 @csrf
                                 <input type="hidden" name="_method" value="PUT">
                                 <div class="form-group">
-                                    <label for="id">ID Aset</label>
-                                    <input type="text" name="id" value="{{ $aset->id }}" class="form-control {{ $errors->has('id') ? 'is-invalid':'' }}" id="id" >
-                                </div>
-                                <div class="form-group">
                                     <label for="nama">Nama Aset</label>
                                     <input type="text" name="nama" value="{{ $aset->nama }}" class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}" id="nama" required>
                                 </div>
