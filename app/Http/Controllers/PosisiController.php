@@ -36,6 +36,18 @@ class PosisiController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+            'aset_id' => 'required',
+            'posisi_id' => 'required'
+    	]);
+ 
+        DB::table('posisis')->insert([
+            'aset_id' => $request->aset_id,
+            'posisi_id' => $request->posisi_id,
+        ]);
+ 
+    	return redirect('/aset')
+            ->with('success_message', 'Berhasil menambah Posisi');
     }
 
     /**

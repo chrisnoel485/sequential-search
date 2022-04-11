@@ -105,10 +105,6 @@ class KategoriController extends Controller
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi
         ]);
-        DB::table('mereks')->insert([
-            'nama' => $request->nama,
-            'deskripsi' => $request->deskripsi,
-        ]);
  
     	return redirect('/kategori')
             ->with('success_message', 'Berhasil mengganti kategori ');

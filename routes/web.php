@@ -30,4 +30,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('/kategori', 'KategoriController');
     Route::resource('/tim', 'TimController');
     Route::resource('/letak', 'LetakController');
+    Route::resource('/aset', 'AsetController');
+    Route::resource('/posisi', 'PosisiController');
 });

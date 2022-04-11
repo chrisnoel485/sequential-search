@@ -309,11 +309,6 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Lokasi',
-            'url'  => 'lokasi',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
             'text' => 'Merek',
             'url'  => 'merek',
             'icon' => 'fas fa-fw fa-user',

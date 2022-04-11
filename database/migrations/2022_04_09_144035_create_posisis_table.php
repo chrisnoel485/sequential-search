@@ -14,8 +14,15 @@ class CreatePosisisTable extends Migration
     public function up()
     {
         Schema::create('posisis', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id');
+            $table->integer('aset_id')->unsigned();;
+            $table->integer('letak_id')->unsigned();;
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
+            $table->foreign('aset_id')->references('id')->on('asets')
+                ->onDelete('cascade');
+            $table->foreign('letak_id')->references('id')->on('letaks')
+            ->onDelete('cascade');
         });
     }
 
