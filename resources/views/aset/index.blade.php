@@ -55,7 +55,7 @@
                                         <td class="text-center">{{ $p->merek->nama }}</td>
                                         <td class="text-center">{{ $p->kategori->nama }}</td>
                                         <td class="text-center">{{ $p->jenis->nama }}</td>
-                                        
+                                        <td class="text-center">{{ $p->letak->nama }}</td>
                                         <td class="text-center">{{ $p->status }}</td>
                                         <td class="text-center">
                                             <form action="{{ route('aset.destroy', $p->id) }}" method="POST">
