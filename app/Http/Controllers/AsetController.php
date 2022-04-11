@@ -122,6 +122,7 @@ class AsetController extends Controller
     {
         //
         $this->validate($request,[
+            'id' => 'required',
             'nama' => 'required',
     		'deskripsi' => 'required',
             'merek_id' => 'required',
