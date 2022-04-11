@@ -52,7 +52,7 @@
                                         <td class="text-center">{{ $no++ }}</td>
                                         <td class="text-center">{{ $p->nama }}</td>
                                         <td>
-                                            <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" class="form-control {{ $errors->has('deskripsi') ? 'is-invalid':'' }}">{{ $aset->deskripsi }}</textarea>
+                                            <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" class="form-control {{ $errors->has('deskripsi') ? 'is-invalid':'' }}">{{ $p->deskripsi }}</textarea>
                                         </td>
                                         <td class="text-center">{{ $p->deskripsi }}</td>
                                         <td class="text-center">{{ $p->merek->nama }}</td>
