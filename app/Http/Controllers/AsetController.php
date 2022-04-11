@@ -144,7 +144,7 @@ class AsetController extends Controller
         ]);
 
         DB::table('posisis')->insert([
-            'aset_id' => $request->id,
+            'aset_id' => $id,
             'letak_id' => $request->letak_id,
         ]);
  
