@@ -141,6 +141,11 @@ class AsetController extends Controller
             'letak_id' => $request->letak_id,
             'status' => $request->status,
         ]);
+
+        DB::table('posisis')->insert([
+            'aset_id' => $request->id,
+            'letak_id' => $request->letak_id,
+        ]);
  
     	return redirect('/aset')
             ->with('success_message', 'Berhasil mengganti aset');
