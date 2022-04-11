@@ -21,4 +21,8 @@ class Aset extends Model
         {
            return $this->belongsTo(Letak::class);
         }
+    public function jenis()
+        {
+           return $this->belongsTo(Jenis::class);
+        }
 }

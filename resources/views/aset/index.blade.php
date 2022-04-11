@@ -39,6 +39,7 @@
                                         <th class="text-center">Deskripsi</th>
                                         <th class="text-center">Merek</th>
                                         <th class="text-center">Kategori</th>
+                                        <th class="text-center">Jenis</th>
                                         <th class="text-center">Letak</th>
                                         <th class="text-center">Status</th>
                                         <th class="text-center">Tindakan</th>
@@ -53,6 +54,7 @@
                                         <td class="text-center">{{ $p->deskripsi }}</td>
                                         <td class="text-center">{{ $p->merek->nama }}</td>
                                         <td class="text-center">{{ $p->kategori->nama }}</td>
+                                        <td class="text-center">{{ $p->jenis->nama }}</td>
                                         <td class="text-center">{{ $p->letak->nama }}</td>
                                         <td class="text-center">{{ $p->status }}</td>
                                         <td class="text-center">
@@ -68,7 +70,7 @@
                                     </tr>
                                     @empty
                                     <tr>
-                                        <td colspan="5" class="text-center">Tidak ada data</td>
+                                        <td colspan="8" class="text-center">Tidak ada data</td>
                                     </tr>
                                     @endforelse
                                 </tbody>
