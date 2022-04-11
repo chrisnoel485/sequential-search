@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Posisi;
+use App\Models\Aset;
+use App\Models\Letak;
+use App\Models\Merek;
 use Illuminate\Http\Request;
 
 class PosisiController extends Controller
