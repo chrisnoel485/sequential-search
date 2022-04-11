@@ -15,6 +15,8 @@ class PosisiController extends Controller
     public function index()
     {
         //
+        $aset = Aset::get();
+    	return view('aset', ['aset' => $aset]);
     }
 
     /**
@@ -56,9 +58,12 @@ class PosisiController extends Controller
      * @param  \App\Models\Posisi  $posisi
      * @return \Illuminate\Http\Response
      */
-    public function show(Posisi $posisi)
+    public function show($id)
     {
         //
+        $posisi = posisi::findOrFail($id);
+        $aset = Aset::orderBy('nama', 'ASC')->get();
+        return view('letak.show', compact('letak','kategori'));
     }
 
     /**

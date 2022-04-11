@@ -19,10 +19,14 @@ class Aset extends Model
         }
     public function letak()
         {
-           return $this->belongsTo(Letak::class);
+           return $this->belongsToMany(Letak::class);
         }
     public function jenis()
         {
            return $this->belongsTo(Jenis::class);
         }
+    //public function posisi()
+    //    {
+     //      return $this->belongsToMany(Posisi::class);
+      //  }    
 }
