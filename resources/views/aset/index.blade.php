@@ -26,7 +26,6 @@
                     </div>
                     <div class="card-tools">
                         <a href="/aset/create" class="btn btn-primary">Input Aset Baru</a>
-                        <a href="/posisi/index" class="btn btn-primary">posisi</a>
                     </div>
                 </div>
                 <div class="card-body">
