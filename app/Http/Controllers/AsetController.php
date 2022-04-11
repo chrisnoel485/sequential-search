@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Aset;
 use App\Models\Merek;
 use App\Models\Kategori;
-use App\Models\Posisi;
+use App\Models\Letak;
 use Illuminate\Http\Request;
 use Redirect;
 use Session;
@@ -23,7 +23,7 @@ class AsetController extends Controller
     public function index()
     {
         //
-        $aset = Aset::with('merek','kategori','posisi')->orderBy('created_at', 'DESC')->paginate(10);
+        $aset = Aset::with('merek','kategori','letak')->orderBy('created_at', 'DESC')->paginate(10);
         return view('aset.index', compact('aset'));
     }
 
@@ -37,8 +37,8 @@ class AsetController extends Controller
         //
         $merek = Merek::orderBy('nama', 'ASC')->get();
         $kategori = Kategori::orderBy('nama', 'ASC')->get();
-        $posisi = Posisi::orderBy('nama', 'ASC')->get();
-        return view('aset/create', compact('kategori','merek','posisi'));
+        $letak = Letak::orderBy('nama', 'ASC')->get();
+        return view('aset/create', compact('kategori','merek','letak'));
     }
 
     /**
@@ -56,7 +56,7 @@ class AsetController extends Controller
     		'deskripsi' => 'required',
             'merek_id' => 'required',
             'kategori_id' => 'required',
-            'posisi_id' => 'required',
+            'letak_id' => 'required',
             'status' => 'required'
     	]);
  
@@ -65,7 +65,7 @@ class AsetController extends Controller
             'deskripsi' => $request->deskripsi,
             'merek_id' => $request->merek_id,
             'kategori_id' => $request->kategori_id,
-            'posisi_id' => $request->posisi_id,
+            'letak_id' => $request->letak_id,
             'status' => $request->status,
         ]);
  
@@ -85,8 +85,8 @@ class AsetController extends Controller
         $aset = Aset::findOrFail($id);
         $merek = Merek::orderBy('nama', 'ASC')->get();
         $kategori = Kategori::orderBy('nama', 'ASC')->get();
-        $posisi = Posis::orderBy('nama', 'ASC')->get();
-        return view('aset.show', compact('aset','merek','kategori','posisi'));
+        $letak = Letak::orderBy('nama', 'ASC')->get();
+        return view('aset.show', compact('aset','merek','kategori','letak'));
     }
 
     /**
@@ -101,8 +101,8 @@ class AsetController extends Controller
         $aset = Aset::findOrFail($id);
         $merek = Merek::orderBy('nama', 'ASC')->get();
         $kategori = Kategori::orderBy('nama', 'ASC')->get();
-        $posisi = Posisi::orderBy('nama', 'ASC')->get();
-        return view('aset.edit', compact('aset','kategori','merek','posisi'));
+        $letak = Letak::orderBy('nama', 'ASC')->get();
+        return view('aset.edit', compact('aset','kategori','merek','letak'));
     }
 
     /**
@@ -120,7 +120,7 @@ class AsetController extends Controller
     		'deskripsi' => 'required',
             'merek_id' => 'required',
             'kategori_id' => 'required',
-            'posisi_id' => 'required',
+            'letak_id' => 'required',
             'status' => 'required'
     	]);
  
@@ -130,7 +130,7 @@ class AsetController extends Controller
             'deskripsi' => $request->deskripsi,
             'merek_id' => $request->merek_id,
             'kategori_id' => $request->kategori_id,
-            'posisi_id' => $request->posisi_id,
+            'letak_id' => $request->letak_id,
             'status' => $request->status,
         ]);
  

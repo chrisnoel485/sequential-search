@@ -64,15 +64,15 @@
                                     <p class="text-danger">{{ $errors->first('kategori_id') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Posisi</label>
-                                        <select name="posisi_id" id="posisi_id" 
+                                    <label for="">Letak</label>
+                                        <select name="letak_id" id="letak_id" 
                                             required class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}">
                                             <option value="">Pilih</option>
-                                            @foreach ($posisi as $row)
+                                            @foreach ($letak as $row)
                                                 <option value="{{ $row->id }}">{{ ucfirst($row->nama) }}</option>
                                             @endforeach
                                         </select>
-                                    <p class="text-danger">{{ $errors->first('posisi_id') }}</p>
+                                    <p class="text-danger">{{ $errors->first('letak_id') }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="status">Status Aset</label>

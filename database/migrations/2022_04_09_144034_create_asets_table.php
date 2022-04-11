@@ -19,7 +19,7 @@ class CreateAsetsTable extends Migration
             $table->string('deskripsi')->nullable();
             $table->integer('merek_id')->unsigned();;
             $table->integer('kategori_id')->unsigned();;
-            $table->integer('posisi_id')->unsigned();;
+            $table->integer('letak_id')->unsigned();;
             $table->string('status');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
@@ -27,7 +27,7 @@ class CreateAsetsTable extends Migration
                 ->onDelete('cascade');
             $table->foreign('kategori_id')->references('id')->on('kategoris')
                 ->onDelete('cascade');
-            $table->foreign('posisi_id')->references('id')->on('posisis')
+            $table->foreign('letak_id')->references('id')->on('letaks')
                 ->onDelete('cascade');
         });
     }

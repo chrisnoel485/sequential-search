@@ -17,8 +17,8 @@ class Aset extends Model
         {
            return $this->belongsTo(Merek::class);
         }
-    public function posisi()
+    public function letak()
         {
-           return $this->belongsTo(Posisi::class);
+           return $this->belongsTo(Letak::class);
         }
 }
