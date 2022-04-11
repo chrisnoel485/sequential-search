@@ -42,25 +42,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @php $no = 1; @endphp
-                                    @forelse($aset as $p)
-                                    <tr>
-                                        <td class="text-center">{{ $no++ }}</td>
-                                        <td class="text-center">{{ $p->nama }}</td>
-                                        <td>
-								            <ul>
-									            @foreach($p->letak as $h)
-									                <li> {{ $h->nama }} </li>
-									            @endforeach
-								            </ul>
-							            </td>
-                                    </tr>
-                                    @empty
-                                    <tr>
-                                        <td colspan="8" class="text-center">Tidak ada data</td>
-                                    </tr>
-                                    @endforelse
-                                </tbody>
+						            @foreach($aset as $a)
+						                <tr>
+							                <td>{{ $a->nama }}</td>
+							                <td>
+								                <ul>
+									                @foreach($a->letak as $h)
+									                    <li> {{ $h->nama}} </li>
+									                @endforeach
+								                </ul>
+							                </td>
+						                </tr>
+						            @endforeach
+					            </tbody>
                             </table>
                         </div>
                     </div>
