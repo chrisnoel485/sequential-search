@@ -7,6 +7,7 @@ use App\Models\Merek;
 use App\Models\Kategori;
 use App\Models\Jenis;
 use App\Models\Letak;
+use App\Models\Posisi;
 use Illuminate\Http\Request;
 use Redirect;
 use Session;
