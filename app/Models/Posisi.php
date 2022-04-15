@@ -12,10 +12,10 @@ class Posisi extends Model
 
     public function aset()
         {
-           return $this->belongsTo(Aset::class);
+           return $this->belongsToMany(Aset::class);
         }
     public function letak()
         {
-           return $this->belongsTo(Letak::class);
+           return $this->belongsToMany(Letak::class);
         }
 }
