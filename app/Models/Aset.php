@@ -25,8 +25,8 @@ class Aset extends Model
         {
            return $this->belongsTo(Jenis::class);
         }
-    #public function letaks()
-    ##    {
-    #       return $this->belongsTo(Letak::class);
-    #    }   
+    public function letaks()
+        {
+           return $this->belongsToMany(Letak::class);
+        }   
 }
