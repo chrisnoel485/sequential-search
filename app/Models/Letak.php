@@ -14,7 +14,7 @@ class Letak extends Model
         {
            return $this->belongsTo(Kategori::class);
         }
-    public function asets()
+    public function aset()
         {
            return $this->belongsToMany(Aset::class);
         }
