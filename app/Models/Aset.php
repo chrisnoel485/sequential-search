@@ -19,7 +19,7 @@ class Aset extends Model
         }
     public function letak()
         {
-           return $this->belongsTo(Letak::class);
+           return $this->belongsToMany(Letak::class);
         }
     public function jenis()
         {
@@ -27,6 +27,6 @@ class Aset extends Model
         }
     public function letaks()
         {
-           return $this->belongsToMany(Letak::class);
+           return $this->belongsTo(Letak::class);
         }   
 }
