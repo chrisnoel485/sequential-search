@@ -110,15 +110,6 @@ class AsetController extends Controller
         $letak = Letak::orderBy('nama', 'ASC')->get();
         return view('aset.edit', compact('aset','kategori','merek','jenis','letak'));
     }
-    public function editlokasi($id)
-    {
-        //
-        $aset = DB::table('asets')->where('id',$id)->get();
-        return view('letak',['aset' => $aset]);
-        //$aset = Aset::findOrFail($id);
-        //$letak = Letak::orderBy('nama', 'ASC')->get();
-        //return view('aset.letak', compact('aset','letak'));
-    }
 
     /**
      * Update the specified resource in storage.
@@ -159,24 +150,6 @@ class AsetController extends Controller
  
     	return redirect('/aset')
             ->with('success_message', 'Berhasil mengganti aset');
-    }
-    public function storeletak(Request $request,$id)
-    {
-        //
-        $this->validate($request,[
-            //'id' => 'required',
-            'letak_id' => 'required'
-    	]);
- 
-        $aset = Aset::findOrFail($id);
-
-        DB::table('aset_letak')->insert([
-            'aset_id' => $id,
-            'letak_id' => $request->letak_id,
-        ]);
- 
-    	return redirect('/posisi')
-            ->with('success_message', 'Berhasil menambahkan posisi aset');
     }
 
     /**
