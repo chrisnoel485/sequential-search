@@ -90,12 +90,17 @@
                                     <p class="text-danger">{{ $errors->first('letak_id') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="status">Status Aset</label>
-                                    <select name="status" id="status" required class="form-control">
+                                    <label for="">Status </label>
+                                        <select name="status_id" id="status_id" 
+                                            required class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}">
                                             <option value="">Pilih</option>
-                                                <option value="Tidak DiPinjam">Tidak DiPinjam</option>
-                                                <option value="DiPinjam">DiPinjam</option>
+                                            @foreach ($status as $row)
+                                                <option value="{{ $row->id }}" {{ $row->id == $aset->status_id ? 'selected':'' }}>
+                                                    {{ ucfirst($row->nama) }}
+                                                </option>
+                                            @endforeach
                                         </select>
+                                    <p class="text-danger">{{ $errors->first('status_id') }}</p>
                                 </div>
                                 <div class="card-footer">
                                     <a href="{{ URL::to('aset') }}" class="btn btn-outline-info">Kembali</a>

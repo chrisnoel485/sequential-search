@@ -8,6 +8,7 @@ use App\Models\Kategori;
 use App\Models\Jenis;
 use App\Models\Letak;
 use App\Models\Posisi;
+use App\Models\Status;
 use Illuminate\Http\Request;
 use Redirect;
 use Session;
@@ -25,7 +26,7 @@ class AsetController extends Controller
     public function index()
     {
         //
-        $aset = Aset::with('merek','kategori','jenis')->orderBy('created_at', 'DESC')->paginate(10);
+        $aset = Aset::with('merek','kategori','jenis','status')->orderBy('created_at', 'DESC')->paginate(10);
         return view('aset.index', compact('aset'));
         #$aset = Aset::get();
     	#return view('posisi.index', ['aset' => $aset]);
@@ -42,7 +43,8 @@ class AsetController extends Controller
         $merek = Merek::orderBy('nama', 'ASC')->get();
         $kategori = Kategori::orderBy('nama', 'ASC')->get();
         $jenis = Jenis::orderBy('nama', 'ASC')->get();
-        return view('aset/create', compact('kategori','merek','jenis'));
+        $status = Status::orderBy('nama', 'ASC')->get();
+        return view('aset/create', compact('kategori','merek','jenis','status'));
     }
 
     /**
@@ -61,7 +63,7 @@ class AsetController extends Controller
             'merek_id' => 'required',
             'kategori_id' => 'required',
             'jenis_id' => 'required',
-            'status' => 'required'
+            'status_id' => 'required'
     	]);
  
         DB::table('asets')->insert([
@@ -70,7 +72,7 @@ class AsetController extends Controller
             'merek_id' => $request->merek_id,
             'kategori_id' => $request->kategori_id,
             'jenis_id' => $request->jenis_id,
-            'status' => $request->status,
+            'status_id' => $request->status_id,
         ]);
  
     	return redirect('/posisi')
@@ -91,7 +93,8 @@ class AsetController extends Controller
         $kategori = Kategori::orderBy('nama', 'ASC')->get();
         $jenis = Jenis::orderBy('nama', 'ASC')->get();
         $letak = Letak::orderBy('nama', 'ASC')->get();
-        return view('aset.show', compact('aset','merek','kategori','jenis','letak'));
+        $status = Status::orderBy('nama', 'ASC')->get();
+        return view('aset.show', compact('aset','merek','kategori','jenis','letak','status'));
     }
 
     /**
@@ -108,7 +111,8 @@ class AsetController extends Controller
         $kategori = Kategori::orderBy('nama', 'ASC')->get();
         $jenis = Jenis::orderBy('nama', 'ASC')->get();
         $letak = Letak::orderBy('nama', 'ASC')->get();
-        return view('aset.edit', compact('aset','kategori','merek','jenis','letak'));
+        $status = Status::orderBy('nama', 'ASC')->get();
+        return view('aset.edit', compact('aset','kategori','merek','jenis','letak','status'));
     }
     public function edita($id)
     {
@@ -118,7 +122,8 @@ class AsetController extends Controller
         $kategori = Kategori::orderBy('nama', 'ASC')->get();
         $jenis = Jenis::orderBy('nama', 'ASC')->get();
         $letak = Letak::orderBy('nama', 'ASC')->get();
-        return view('aset.edita', compact('aset','kategori','merek','jenis','letak'));
+        $status = Status::orderBy('nama', 'ASC')->get();
+        return view('aset.edita', compact('aset','kategori','merek','jenis','letak','status'));
     }
 
     /**
@@ -139,7 +144,7 @@ class AsetController extends Controller
             'kategori_id' => 'required',
             'jenis_id' => 'required',
             //'letak_id' => 'required',
-            'status' => 'required'
+            'status_id' => 'required'
     	]);
  
         $aset = Aset::findOrFail($id);
@@ -150,7 +155,7 @@ class AsetController extends Controller
             'kategori_id' => $request->kategori_id,
             'jenis_id' => $request->jenis_id,
             //'letak_id' => $request->letak_id,
-            'status' => $request->status,
+            'status_id' => $request->status_id,
         ]);
 
         //DB::table('aset_letak')->insert([
@@ -174,7 +179,7 @@ class AsetController extends Controller
             'kategori_id' => 'required',
             'jenis_id' => 'required',
             //'letak_id' => 'required',
-            'status' => 'required'
+            'status_id' => 'required'
     	]);
  
         $aset = Aset::findOrFail($id);
@@ -185,7 +190,7 @@ class AsetController extends Controller
             'kategori_id' => $request->kategori_id,
             'jenis_id' => $request->jenis_id,
             //'letak_id' => $request->letak_id,
-            'status' => $request->status,
+            'status_id' => $request->status_id,
         ]);
 
         DB::table('aset_letak')->insert([
