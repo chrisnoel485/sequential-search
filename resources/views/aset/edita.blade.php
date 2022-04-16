@@ -37,45 +37,7 @@
                                     <label for="deskripsi">Deskripsi</label>
                                     <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" class="form-control {{ $errors->has('deskripsi') ? 'is-invalid':'' }}">{{ $aset->deskripsi }}</textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label for="">Merek </label>
-                                        <select name="merek_id" id="merek_id" 
-                                            required class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}">
-                                            <option value="">Pilih</option>
-                                            @foreach ($merek as $row)
-                                                <option value="{{ $row->id }}" {{ $row->id == $aset->merek_id ? 'selected':'' }}>
-                                                    {{ ucfirst($row->nama) }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    <p class="text-danger">{{ $errors->first('merek_id') }}</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Kategori </label>
-                                        <select name="kategori_id" id="kategori_id" 
-                                            required class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}">
-                                            <option value="">Pilih</option>
-                                            @foreach ($kategori as $row)
-                                                <option value="{{ $row->id }}" {{ $row->id == $aset->kategori_id ? 'selected':'' }}>
-                                                    {{ ucfirst($row->nama) }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    <p class="text-danger">{{ $errors->first('kategori_id') }}</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Jenis </label>
-                                        <select name="jenis_id" id="jenis_id" 
-                                            required class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}">
-                                            <option value="">Pilih</option>
-                                            @foreach ($jenis as $row)
-                                                <option value="{{ $row->id }}" {{ $row->id == $aset->jenis_id ? 'selected':'' }}>
-                                                    {{ ucfirst($row->nama) }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    <p class="text-danger">{{ $errors->first('jenis_id') }}</p>
-                                </div>
+                                
                                 <div class="form-group">
                                     <label for="">Letak </label>
                                         <select name="letak_id" id="letak_id" 
