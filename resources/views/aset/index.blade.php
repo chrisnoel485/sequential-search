@@ -56,13 +56,7 @@
                                         <td class="text-center">{{ $p->kategori->nama }}</td>
                                         <td class="text-center">{{ $p->jenis->nama }}</td>
                                         <td class="text-center">
-                                            <form action="{{ route('aset.destroy', $p->id) }}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="_method" value="DELETE">
-                                                    <div class="btn-group">
-                                                        <a class="btn btn-success" href="{{ route('aset.edita', $p->id) }}"><i class="fa fa-edit"></i></a>
-                                                    </div>
-                                            </form>
+                                            adada
                                         </td>
                                         <td class="text-center">{{ $p->status }}</td>
                                         <td class="text-center">
