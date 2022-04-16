@@ -76,7 +76,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="status">Status Aset</label>
-                                    <input type="text" name="status" id="status" class="form-control" >
+                                    <select name="status" id="status" required class="form-control">
+                                            <option value="">Pilih</option>
+                                                <option value="Tidak DiPinjam">Tidak DiPinjam</option>
+                                                <option value="DiPinjam">DiPinjam</option>
+                                        </select>
                                 </div>
                                 <div class="card-footer">
                                     <a href="{{ URL::to('aset') }}" class="btn btn-outline-info">Kembali</a>
