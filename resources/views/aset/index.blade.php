@@ -61,7 +61,6 @@
                                                 <input type="hidden" name="_method" value="DELETE">
                                                     <div class="btn-group">
                                                         <a class="btn btn-success" href="{{ route('aset.edit', $p->id) }}"><i class="fa fa-edit"></i></a>
-                                                        <a class="btn btn-success" href="{{ route('aset.edita', $p->id) }}"><i class="fa fa-edit"></i></a>
                                                         <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                                     </div>
                                             </form>
