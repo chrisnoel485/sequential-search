@@ -113,9 +113,11 @@ class AsetController extends Controller
     public function editlokasi($id)
     {
         //
-        $aset = Aset::findOrFail($id);
-        $letak = Letak::orderBy('nama', 'ASC')->get();
-        return view('aset.letak', compact('aset','letak'));
+        $aset = DB::table('asets')->where('aset_id',$id)->get();
+        return view('letak',['aset' => $aset]);
+        //$aset = Aset::findOrFail($id);
+        //$letak = Letak::orderBy('nama', 'ASC')->get();
+        //return view('aset.letak', compact('aset','letak'));
     }
 
     /**
