@@ -42,8 +42,8 @@ class AsetController extends Controller
         $merek = Merek::orderBy('nama', 'ASC')->get();
         $kategori = Kategori::orderBy('nama', 'ASC')->get();
         $jenis = Jenis::orderBy('nama', 'ASC')->get();
-        $letak = Letak::orderBy('nama', 'ASC')->get();
-        return view('aset/create', compact('kategori','merek','jenis','letak'));
+        //$letak = Letak::orderBy('nama', 'ASC')->get();
+        return view('aset/create', compact('kategori','merek','jenis'));
     }
 
     /**

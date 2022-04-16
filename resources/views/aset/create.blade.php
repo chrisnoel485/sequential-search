@@ -75,17 +75,6 @@
                                     <p class="text-danger">{{ $errors->first('jenis_id') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Letak</label>
-                                        <select name="letak_id" id="letak_id" 
-                                            required class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}">
-                                            <option value="">Pilih</option>
-                                            @foreach ($letak as $row)
-                                                <option value="{{ $row->id }}">{{ ucfirst($row->nama) }}</option>
-                                            @endforeach
-                                        </select>
-                                    <p class="text-danger">{{ $errors->first('letak_id') }}</p>
-                                </div>
-                                <div class="form-group">
                                     <label for="status">Status Aset</label>
                                     <input type="text" name="status" id="status" class="form-control" >
                                 </div>
