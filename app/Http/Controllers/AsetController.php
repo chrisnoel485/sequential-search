@@ -25,10 +25,10 @@ class AsetController extends Controller
     public function index()
     {
         //
-        ##$aset = Aset::with('merek','kategori','jenis','letak')->orderBy('created_at', 'DESC')->paginate(10);
-        ##return view('aset.index', compact('aset'));
-        $aset = Aset::get();
-    	return view('posisi.index', ['aset' => $aset]);
+        $aset = Aset::with('merek','kategori','jenis','letak')->orderBy('created_at', 'DESC')->paginate(10);
+        return view('aset.index', compact('aset'));
+        #$aset = Aset::get();
+    	#return view('posisi.index', ['aset' => $aset]);
     }
 
     /**
