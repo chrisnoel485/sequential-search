@@ -60,8 +60,8 @@
                                                 @csrf
                                                 <input type="hidden" name="_method" value="DELETE">
                                                     <div class="btn-group">
-                                                        <a class="btn btn-success" href="{{ route('aset.editlokasi', $p->id) }}"><i class="fa fa-edit"></i></a>
-                                                    </div>
+                                                        <a href="/aset/letak/{{ $p->id }}">Edit</a>
+                                                        </div>
                                             </form>
                                         </td>
                                         <td class="text-center">{{ $p->status }}</td>
