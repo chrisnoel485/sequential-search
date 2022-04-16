@@ -20,7 +20,7 @@ class CreateAsetsTable extends Migration
             $table->integer('merek_id')->unsigned();;
             $table->integer('kategori_id')->unsigned();;
             $table->integer('jenis_id')->unsigned();;
-            $table->string('status_id');
+            $table->integer('status_id')->unsigned();;
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
             $table->foreign('merek_id')->references('id')->on('mereks')
