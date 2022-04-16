@@ -110,6 +110,13 @@ class AsetController extends Controller
         $letak = Letak::orderBy('nama', 'ASC')->get();
         return view('aset.edit', compact('aset','kategori','merek','jenis','letak'));
     }
+    public function editlokasi($id)
+    {
+        //
+        $aset = Aset::findOrFail($id);
+        $letak = Letak::orderBy('nama', 'ASC')->get();
+        return view('aset.letak', compact('aset','letak'));
+    }
 
     /**
      * Update the specified resource in storage.
