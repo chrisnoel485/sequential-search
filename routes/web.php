@@ -34,6 +34,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('/posisi', 'PosisiController');
     Route::get('aset/{aset}/edita', 'AsetController@edita')->name('aset.edita');
     Route::get('aset/{aset}', 'AsetController@updatea')->name('aset.updatea');
-    Route::get('aset/{aset}', 'AsetController@show')->name('aset.show');
+    //Route::get('aset/{aset}', 'AsetController@show')->name('aset.show');
 
 });
