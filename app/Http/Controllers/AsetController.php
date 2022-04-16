@@ -166,26 +166,7 @@ class AsetController extends Controller
     {
         //
         
-        $this->validate($request,[
-            //'id' => 'required',
-            'nama' => 'required',
-    		'deskripsi' => 'required',
-            'merek_id' => 'required',
-            'kategori_id' => 'required',
-            'jenis_id' => 'required',
-            'letak_id' => 'required',
-            'status' => 'required'
-    	]);
- 
         $aset = Aset::findOrFail($id);
-        $aset->update([
-            'nama' => $request->nama,
-            'deskripsi' => $request->deskripsi,
-            'merek_id' => $request->merek_id,
-            'kategori_id' => $request->kategori_id,
-            'jenis_id' => $request->jenis_id,
-            'status' => $request->status,
-        ]);
 
         DB::table('aset_letak')->insert([
             'aset_id' => $id,
