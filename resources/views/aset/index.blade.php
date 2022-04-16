@@ -60,7 +60,7 @@
                                                 @csrf
                                                 <input type="hidden" name="_method" value="DELETE">
                                                     <div class="btn-group">
-                                                        <a class="btn btn-success" href="{{ route('aset.letak', $p->id) }}"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn btn-success" href="{{ route('aset.editlokasi', $p->id) }}"><i class="fa fa-edit"></i></a>
                                                     </div>
                                             </form>
                                         </td>
