@@ -40,6 +40,7 @@
                                         <th class="text-center">Merek</th>
                                         <th class="text-center">Kategori</th>
                                         <th class="text-center">Jenis</th>
+                                        <th class="text-center">Posisi</th>
                                         <th class="text-center">Status</th>
                                         <th class="text-center">Tindakan</th>
                                     </tr>
@@ -54,6 +55,15 @@
                                         <td class="text-center">{{ $p->merek->nama }}</td>
                                         <td class="text-center">{{ $p->kategori->nama }}</td>
                                         <td class="text-center">{{ $p->jenis->nama }}</td>
+                                        <td class="text-center">
+                                            <form action="{{ route('aset.destroy', $p->id) }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-success" href="{{ route('aset.storeletak', $p->id) }}"><i class="fa fa-edit"></i></a>
+                                                    </div>
+                                            </form>
+                                        </td>
                                         <td class="text-center">{{ $p->status }}</td>
                                         <td class="text-center">
                                             <form action="{{ route('aset.destroy', $p->id) }}" method="POST">
