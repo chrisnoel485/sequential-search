@@ -82,7 +82,7 @@
                                             required class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}">
                                             <option value="">Pilih</option>
                                             @foreach ($letak as $row)
-                                                <option value="{{ $row->id }}" {{ $row->id == $aset->letak_id ? 'selected':'' }}>
+                                                <option value="{{ $row->id }}" {{ $row->id == $aset_letak->letak_id ? 'selected':'' }}>
                                                     {{ ucfirst($row->nama) }}
                                                 </option>
                                             @endforeach
