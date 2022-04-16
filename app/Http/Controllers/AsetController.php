@@ -188,13 +188,13 @@ class AsetController extends Controller
             'status' => $request->status,
         ]);
 
-        //DB::table('aset_letak')->insert([
-        //    'aset_id' => $id,
-        //    'letak_id' => $request->letak_id,
-        //]);
+        DB::table('aset_letak')->insert([
+            'aset_id' => $id,
+            'letak_id' => $request->letak_id,
+        ]);
  
     	return redirect('/posisi')
-            ->with('success_message', 'Berhasil mengganti aset');
+            ->with('success_message', 'Berhasil Menambhakan Lokasi aset');
     }
 
     /**
