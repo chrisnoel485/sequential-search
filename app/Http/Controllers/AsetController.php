@@ -151,6 +151,24 @@ class AsetController extends Controller
     	return redirect('/aset')
             ->with('success_message', 'Berhasil mengganti aset');
     }
+    public function storeletak(Request $request,$id)
+    {
+        //
+        $this->validate($request,[
+            //'id' => 'required',
+            'letak_id' => 'required'
+    	]);
+ 
+        $aset = Aset::findOrFail($id);
+
+        DB::table('aset_letak')->insert([
+            'aset_id' => $id,
+            'letak_id' => $request->letak_id,
+        ]);
+ 
+    	return redirect('/posisi')
+            ->with('success_message', 'Berhasil menambahkan posisi aset');
+    }
 
     /**
      * Remove the specified resource from storage.
