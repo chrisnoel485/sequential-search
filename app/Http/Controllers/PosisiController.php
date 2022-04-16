@@ -17,7 +17,8 @@ class PosisiController extends Controller
     public function index()
     {
         //
-        $aset = Aset::get();
+        //$aset = Aset::with('merek','kategori','jenis')->orderBy('created_at', 'DESC')->paginate(10);
+        $aset = Aset::get()->orderBy('created_at', 'DESC')->paginate(10);
     	return view('posisi.index', ['aset' => $aset]);
     }
 
