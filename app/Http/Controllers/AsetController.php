@@ -158,7 +158,7 @@ class AsetController extends Controller
             'letak_id' => $request->letak_id,
         ]);
  
-    	return redirect('/aset')
+    	return redirect('/posisi')
             ->with('success_message', 'Berhasil mengganti aset');
     }
 
