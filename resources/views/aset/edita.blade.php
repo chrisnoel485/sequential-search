@@ -26,16 +26,16 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <form action="{{ route('aset.update', $aset->id) }}" method="POST">
+                            <form action="{{ route('aset.update1', $aset->id) }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="_method" value="PUT">
                                 <div class="form-group">
                                     <label for="nama">Nama Aset</label>
-                                    <input type="text" name="nama" value="{{ $aset->nama }}" class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}" id="nama" required>
+                                    <input type="text" name="nama" value="{{ $aset->nama }}" class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}" id="nama" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
-                                    <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" class="form-control {{ $errors->has('deskripsi') ? 'is-invalid':'' }}">{{ $aset->deskripsi }}</textarea>
+                                    <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" class="form-control {{ $errors->has('deskripsi') ? 'is-invalid':'' }}" disabled>{{ $aset->deskripsi }}</textarea>
                                 </div>
                                 
                                 <div class="form-group">
@@ -50,10 +50,6 @@
                                             @endforeach
                                         </select>
                                     <p class="text-danger">{{ $errors->first('letak_id') }}</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nama">Status Aset</label>
-                                    <input type="text" name="status" value="{{ $aset->status }}" class="form-control {{ $errors->has('status') ? 'is-invalid':'' }}" id="status" required>
                                 </div>
                                 <div class="card-footer">
                                     <a href="{{ URL::to('aset') }}" class="btn btn-outline-info">Kembali</a>
