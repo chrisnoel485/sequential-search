@@ -26,7 +26,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <form action="{{ route('aset.update1', $aset->id) }}" method="POST">
+                            <form action="{{ route('aset.updatea', $aset->id) }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="_method" value="PUT">
                                 <div class="form-group">
