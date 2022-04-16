@@ -32,5 +32,5 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('/letak', 'LetakController');
     Route::resource('/aset', 'AsetController');
     Route::resource('/posisi', 'PosisiController');
-    Route::get('/pegawai/tambah','AsetController@editlokasi');
+    Route::get('/aset/letak','AsetController@editlokasi');
 });
