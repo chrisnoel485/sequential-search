@@ -25,7 +25,7 @@ class AsetController extends Controller
     public function index()
     {
         //
-        $aset = Aset::with('merek','kategori','jenis','letak')->orderBy('created_at', 'DESC')->paginate(10);
+        $aset = Aset::with('merek','kategori','jenis')->orderBy('created_at', 'DESC')->paginate(10);
         return view('aset.index', compact('aset'));
         #$aset = Aset::get();
     	#return view('posisi.index', ['aset' => $aset]);
@@ -42,7 +42,6 @@ class AsetController extends Controller
         $merek = Merek::orderBy('nama', 'ASC')->get();
         $kategori = Kategori::orderBy('nama', 'ASC')->get();
         $jenis = Jenis::orderBy('nama', 'ASC')->get();
-        //$letak = Letak::orderBy('nama', 'ASC')->get();
         return view('aset/create', compact('kategori','merek','jenis'));
     }
 
