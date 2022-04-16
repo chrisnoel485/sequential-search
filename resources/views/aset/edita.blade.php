@@ -31,13 +31,51 @@
                                 <input type="hidden" name="_method" value="PUT">
                                 <div class="form-group">
                                     <label for="nama">Nama Aset</label>
-                                    <input type="text" name="nama" value="{{ $aset->nama }}" class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}" id="nama" disabled>
+                                    <input type="text" name="nama" value="{{ $aset->nama }}" class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}" id="nama" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
-                                    <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" class="form-control {{ $errors->has('deskripsi') ? 'is-invalid':'' }}" disabled>{{ $aset->deskripsi }}</textarea>
+                                    <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" class="form-control {{ $errors->has('deskripsi') ? 'is-invalid':'' }}">{{ $aset->deskripsi }}</textarea>
                                 </div>
-                                
+                                <div class="form-group">
+                                    <label for="">Merek </label>
+                                        <select name="merek_id" id="merek_id" 
+                                            required class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}">
+                                            <option value="">Pilih</option>
+                                            @foreach ($merek as $row)
+                                                <option value="{{ $row->id }}" {{ $row->id == $aset->merek_id ? 'selected':'' }}>
+                                                    {{ ucfirst($row->nama) }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    <p class="text-danger">{{ $errors->first('merek_id') }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Kategori </label>
+                                        <select name="kategori_id" id="kategori_id" 
+                                            required class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}">
+                                            <option value="">Pilih</option>
+                                            @foreach ($kategori as $row)
+                                                <option value="{{ $row->id }}" {{ $row->id == $aset->kategori_id ? 'selected':'' }}>
+                                                    {{ ucfirst($row->nama) }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    <p class="text-danger">{{ $errors->first('kategori_id') }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Jenis </label>
+                                        <select name="jenis_id" id="jenis_id" 
+                                            required class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}">
+                                            <option value="">Pilih</option>
+                                            @foreach ($jenis as $row)
+                                                <option value="{{ $row->id }}" {{ $row->id == $aset->jenis_id ? 'selected':'' }}>
+                                                    {{ ucfirst($row->nama) }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    <p class="text-danger">{{ $errors->first('jenis_id') }}</p>
+                                </div>
                                 <div class="form-group">
                                     <label for="">Letak </label>
                                         <select name="letak_id" id="letak_id" 
@@ -50,6 +88,10 @@
                                             @endforeach
                                         </select>
                                     <p class="text-danger">{{ $errors->first('letak_id') }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nama">Status Aset</label>
+                                    <input type="text" name="status" value="{{ $aset->status }}" class="form-control {{ $errors->has('status') ? 'is-invalid':'' }}" id="status" required>
                                 </div>
                                 <div class="card-footer">
                                     <a href="{{ URL::to('aset') }}" class="btn btn-outline-info">Kembali</a>
