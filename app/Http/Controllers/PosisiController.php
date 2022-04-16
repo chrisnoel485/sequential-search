@@ -23,7 +23,9 @@ class PosisiController extends Controller
     {
         //
         //$aset = Aset::with('merek','kategori','jenis')->orderBy('created_at', 'DESC')->paginate(10);
-        $aset = Aset::get()->orderBy('created_at', 'DESC')->paginate(10);
+        #$merek = Merek::orderBy('created_at', 'DESC')->paginate(10);
+        #$aset = Aset::get()->orderBy('created_at', 'DESC')->paginate(10);
+        $aset = Aset::orderBy('created_at', 'DESC')->paginate(10);
     	return view('posisi.index', ['aset' => $aset]);
     }
 
