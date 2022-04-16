@@ -90,8 +90,12 @@
                                     <p class="text-danger">{{ $errors->first('letak_id') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nama">Status Aset</label>
-                                    <input type="text" name="status" value="{{ $aset->status }}" class="form-control {{ $errors->has('status') ? 'is-invalid':'' }}" id="status" required>
+                                    <label for="status">Status Aset</label>
+                                    <select name="status" id="status" required class="form-control">
+                                            <option value="">Pilih</option>
+                                                <option value="Tidak DiPinjam">Tidak DiPinjam</option>
+                                                <option value="DiPinjam">DiPinjam</option>
+                                        </select>
                                 </div>
                                 <div class="card-footer">
                                     <a href="{{ URL::to('aset') }}" class="btn btn-outline-info">Kembali</a>
