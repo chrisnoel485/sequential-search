@@ -144,7 +144,7 @@ class AsetController extends Controller
             'merek_id' => 'required',
             'kategori_id' => 'required',
             'jenis_id' => 'required',
-            //'letak_id' => 'required',
+            'letak_id' => 'required',
             'status_id' => 'required'
     	]);
  
@@ -159,10 +159,10 @@ class AsetController extends Controller
             'status_id' => $request->status_id,
         ]);
 
-        //DB::table('aset_letak')->insert([
-        //    'aset_id' => $id,
-        //    'letak_id' => $request->letak_id,
-        //]);
+        DB::table('aset_letak')->insert([
+            'aset_id' => $id,
+            'letak_id' => $request->letak_id,
+        ]);
  
     	return redirect('/aset')
             ->with('success_message', 'Berhasil mengganti aset');
