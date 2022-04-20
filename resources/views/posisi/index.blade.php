@@ -24,9 +24,6 @@
                     <div>
                         <h3 class="card-title">Data Aset</h3>
                     </div>
-                    <div class="card-tools">
-                        <a href="/aset/create" class="btn btn-primary">Input Aset Baru</a>
-                    </div>
                 </div>
                 <div class="card-body">
                     <div class="row">
