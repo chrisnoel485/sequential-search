@@ -302,6 +302,22 @@ return [
                 ],
             ],
         ],
+        ['header' => 'Management User'],
+        [
+            'text' => 'Role',
+            'url'  => 'role',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Users',
+            'url'  => 'users',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Role Permission',
+            'url'  => 'role_permission',
+            'icon' => 'fas fa-fw fa-user',
+        ],
         ['header' => 'Management Data'],
         [
             'text' => 'Aset',
