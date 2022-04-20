@@ -14,11 +14,11 @@ class StatusTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('statutes')->insert([
+        DB::table('statuses')->insert([
         	'nama' => 'Dipinjam',
         	'deskripsi' => 'Aset DiPinjam'
         ]);
-        DB::table('statutes')->insert([
+        DB::table('statuses')->insert([
         	'nama' => 'Tidak Dipinjam',
         	'deskripsi' => 'Aset Tidak DiPinjam'
         ]);

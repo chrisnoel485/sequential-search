@@ -57,7 +57,7 @@
 								                <li> {{ $h->nama}} </li>
 									        @endforeach
                                         </td>
-                                        <td class="text-center">{{ $p->status }}</td>
+                                        <td class="text-center">{{ $p->status->nama }}</td>
                                         <td class="text-center">
                                             <form action="{{ route('aset.destroy', $p->id) }}" method="POST">
                                                 @csrf
