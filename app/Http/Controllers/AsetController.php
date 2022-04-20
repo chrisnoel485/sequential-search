@@ -114,6 +114,7 @@ class AsetController extends Controller
         $status = Status::orderBy('nama', 'ASC')->get();
         return view('aset.edit', compact('aset','kategori','merek','jenis','letak','status'));
     }
+
     public function edita($id)
     {
         //
@@ -183,15 +184,14 @@ class AsetController extends Controller
     	]);
  
         $aset = Aset::findOrFail($id);
-        $aset->update([
-            'nama' => $request->nama,
-            'deskripsi' => $request->deskripsi,
-            'merek_id' => $request->merek_id,
-            'kategori_id' => $request->kategori_id,
-            'jenis_id' => $request->jenis_id,
-            //'letak_id' => $request->letak_id,
-            'status_id' => $request->status_id,
-        ]);
+        //$aset->update([
+        //    'nama' => $request->nama,
+        //    'deskripsi' => $request->deskripsi,
+        //    'merek_id' => $request->merek_id,
+        //    'kategori_id' => $request->kategori_id,
+        //    'jenis_id' => $request->jenis_id,
+        //    'status_id' => $request->status_id,
+        //]);
 
         DB::table('aset_letak')->insert([
             'aset_id' => $id,
