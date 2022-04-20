@@ -178,7 +178,7 @@ class AsetController extends Controller
             'merek_id' => 'required',
             'kategori_id' => 'required',
             'jenis_id' => 'required',
-            //'letak_id' => 'required',
+            'letak_id' => 'required',
             'status_id' => 'required'
     	]);
  
