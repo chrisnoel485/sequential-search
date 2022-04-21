@@ -19,7 +19,6 @@ class RoleController extends Controller
         $this->validate($request, [
             'name' => 'required|string|max:50'
         ]);
-​
         $role = Role::firstOrCreate(['name' => $request->name]);
         return redirect()->back()->with(['success' => 'Role: <strong>' . $role->name . '</strong> Ditambahkan']);
     }
