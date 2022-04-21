@@ -302,6 +302,7 @@ return [
                 ],
             ],
         ],
+        @role('admin')
         ['header' => 'Management User'],
         [
             'text' => 'Role',
@@ -318,6 +319,9 @@ return [
             'url'  => 'role_permission',
             'icon' => 'fas fa-fw fa-user',
         ],
+        @endrole
+
+        @if (auth()->user()->can('show products') || auth()->user()->can('delete products') || auth()->user()->can('create products'))
         ['header' => 'Management Data'],
         [
             'text' => 'Aset',
@@ -354,6 +358,7 @@ return [
             'url'  => 'tim',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        @endif
         ['header' => 'labels'],
         [
             'text'       => 'important',
