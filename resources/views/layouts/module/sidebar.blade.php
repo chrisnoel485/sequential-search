@@ -5,7 +5,7 @@
             style="opacity: .8">
         <span class="brand-text font-weight-light">Pusat Data</span>
     </a>
-​
+
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
@@ -17,7 +17,6 @@
                 <a href="#" class="d-block">Tim Server</a>
             </div>
         </div>
-​
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item has-treeview menu-open">
