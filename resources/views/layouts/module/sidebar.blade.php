@@ -3,7 +3,7 @@
     <a href="index3.html" class="brand-link">
         <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="POS" class="brand-image img-circle elevation-3"
             style="opacity: .8">
-        <span class="brand-text font-weight-light">POS</span>
+        <span class="brand-text font-weight-light">Pusat Data</span>
     </a>
 ​
     <!-- Sidebar -->
@@ -14,7 +14,7 @@
                 <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Daengweb.id</a>
+                <a href="#" class="d-block">Tim Server</a>
             </div>
         </div>
 ​
@@ -39,9 +39,39 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
+                            <a href="{{ route('aset.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Aset</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('kategori.index') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Kategori</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('jenis.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Jenis</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('letak.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Letak</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('merek.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Merek</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('posisi.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Posisi</p>
                             </a>
                         </li>
                         <li class="nav-item">
