@@ -2,7 +2,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-​
     @yield('title')
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,7 +30,6 @@
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
-​
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
@@ -43,7 +41,6 @@
                     </div>
                 </div>
             </form>
-​
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -70,14 +67,13 @@
                 </li>
             </ul>
         </nav>
-​
-        @include('layouts.module.sidebar')
-​
+
+        @include('layouts.module.sidebar')​
         @yield('content')
         
         @include('layouts.module.footer')
     </div>
-​
+
     <!-- jQuery -->
     <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
