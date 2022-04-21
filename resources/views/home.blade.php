@@ -26,50 +26,10 @@
         <section class="content" id="dw">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <div class="small-box bg-info">
-                            <div class="inner">
-                                <h3>{{ $product }}</h3>
-                                <p>Produk</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-bag"></i>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-6">
-                        <div class="small-box bg-success">
-                            <div class="inner">
-                                <h3>{{ $order }}</h3>
-                                <p>Pesanan</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-stats-bars"></i>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="small-box bg-warning">
-                            <div class="inner">
-                                <h3>{{ $customer }}</h3>
-                                <p>Pelanggan</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-person-add"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="small-box bg-danger">
-                            <div class="inner">
-                                <h3>{{ $user }}</h3>
-                                <p>Karyawan</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="mb-0">You are logged in!</p>
                             </div>
                         </div>
                     </div>
