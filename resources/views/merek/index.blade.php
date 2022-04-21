@@ -81,9 +81,9 @@
                                                 @csrf
                                                 <input type="hidden" name="_method" value="DELETE">
                                                     <div class="btn-group">
-                                                        <a class="btn btn-info" href="{{ route('merek.show', $p->id) }}"><i class="fa fa-eye"></i></a>
-                                                        <a class="btn btn-success" href="{{ route('merek.edit', $p->id) }}"><i class="fa fa-edit"></i></a>
-                                                        <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                        <a class="btn btn-info btn-sm" href="{{ route('merek.show', $p->id) }}"><i class="fa fa-eye"></i></a>
+                                                        <a class="btn btn-success btn-sm" href="{{ route('merek.edit', $p->id) }}"><i class="fa fa-edit"></i></a>
+                                                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                                     </div>
                                             </form>
                                     </tr>

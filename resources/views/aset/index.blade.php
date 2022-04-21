@@ -65,8 +65,8 @@
                                                 @csrf
                                                 <input type="hidden" name="_method" value="DELETE">
                                                     <div class="btn-group">
-                                                        <a class="btn btn-success" href="{{ route('aset.edit', $p->id) }}"><i class="fa fa-edit"></i></a>
-                                                        <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                        <a class="btn btn-success btn-sm" href="{{ route('aset.edit', $p->id) }}"><i class="fa fa-edit"></i></a>
+                                                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                                     </div>
                                             </form>
                                     </tr>
