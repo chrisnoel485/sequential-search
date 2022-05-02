@@ -1,63 +1,65 @@
 @extends('layouts.master')
-
-@section('title', 'Daftar User')
-
-@section('content_header')
-    <div class="row mb-2">
-        <div class="col-sm-6">                      
-            <h1 class="m-0 text-dark">Manajemen User</h1>
-        </div>
-        <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                <li class="breadcrumb-item active">Users</li>
-            </ol>
-        </div>
-    </div>
-@stop
-
+​
+@section('title')
+    <title>Role Permission</title>
+@endsection
+​
+@section('css')
+    <style type="text/css">
+        .tab-pane{
+            height:150px;
+            overflow-y:scroll;
+        }
+    </style>
+@endsection
+​
 @section('content')
     <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">Role Permission</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                            <li class="breadcrumb-item active">Role Permission</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+​
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4">
-                        @card
-                            @slot('title')
-                            <h4 class="card-title">Add New Permission</h4>
-                            @endslot
-​
-                            <form action="{{ route('users.add_permission') }}" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="">Name</label>
-                                    <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid':'' }}" required>
-                                    <p class="text-danger">{{ $errors->first('name') }}</p>
-                                </div>
-                                <div class="form-group">
-                                    <button class="btn btn-primary btn-sm">
-                                        Add New
-                                    </button>
-                                </div>
-                            </form>
-                            @slot('footer')
-​
-                            @endslot
-                        @endcard
-                    </div>
-​
-                    <div class="col-md-8">
-                        @card
-                            @slot('title')
-                            Set Permission to Role
-                            @endslot
-​
-                            @if (session('success'))
-                                @alert(['type' => 'success'])
-                                    {{ session('success') }}
-                                @endalert
-                            @endif
-                            
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">        
+                                <h4 class="card-title">Add New Permission</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="{{ route('users.add_permission') }}" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="">Name</label>
+                                        <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid':'' }}" required>
+                                        <p class="text-danger">{{ $errors->first('name') }}</p>
+                                    </div>
+                                    <div clasas="form-group">
+                                        <button class="btn btn-primary btn-sm">
+                                            Add New
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">        
+                                <h4 class="card-title">Set Permission to Role</h4>
+                            </div>
+                            <div class="card-body">
                             <form action="{{ route('users.roles_permission') }}" method="GET">
                                 <div class="form-group">
                                     <label for="">Roles</label>
@@ -113,13 +115,11 @@
                                     </div>
                                 </form>
                             @endif
-                            @slot('footer')
-                               
-                            @endslot
-                        @endcard
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-@stop
+@endsection
