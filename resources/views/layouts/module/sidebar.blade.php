@@ -45,7 +45,7 @@
           </li>
           <li class="nav-header">Management User</li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="/users" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 User
@@ -53,7 +53,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="/role" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Role
@@ -61,7 +61,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/kanban.html" class="nav-link">
+            <a href="{{ route('users.roles_permission') }}" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Role Permission
@@ -70,7 +70,7 @@
           </li>
           <li class="nav-header">Management Aset</li>
           <li class="nav-item">
-            <a href="pages/kanban.html" class="nav-link">
+            <a href="/aset" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Aset
