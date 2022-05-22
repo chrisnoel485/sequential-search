@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
-//Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function() {
     
     //Route yang berada dalam group ini hanya dapat diakses oleh user
     //yang memiliki role admin
@@ -72,7 +72,7 @@ Auth::routes();
 //    Route::get('aset/{aset}', 'AsetController@updatea')->name('aset.updatea');
 //    //Route::get('aset/{aset}', 'AsetController@show')->name('aset.show');
 //
-//});
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
